@@ -1,0 +1,13 @@
+spring:
+  liquibase:
+    change-log: classpath:db/liquibase_main.xml
+    default-schema: ${SPRING_LIQUIBASE_DEFAULT_SCHEMA:graph_schema}
+    enabled: true
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: ${SPRING_DATASOURCE_USERNAME:graph_user}
+    password: ${SPRING_DATASOURCE_PASSWORD:graph}
+    hikari:
+      leakDetectionThreshold: 6000
+    initialization-mode: always
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/graphdb?currentSchema=graph_schema}
