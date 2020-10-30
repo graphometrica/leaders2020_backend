@@ -11,3 +11,5 @@ spring:
       leakDetectionThreshold: 6000
     initialization-mode: always
     url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/graphdb?currentSchema=graph_schema}
+server:
+  port: 8095
