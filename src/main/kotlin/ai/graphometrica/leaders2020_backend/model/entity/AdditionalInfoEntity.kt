@@ -8,7 +8,7 @@ import javax.persistence.Id
 class AdditionalInfoEntity{
 
     @Id
-    var additional_info_id = UUID.randomUUID().toString()
+    var additionalInfoId = UUID.randomUUID().toString()
 
     @Column
     var identificationMark : String? = null
@@ -26,8 +26,8 @@ class AdditionalInfoEntity{
     var isSocialized : Boolean? = null
 
     @Column
-    var general_info : String? = null
+    var generalInfo : String? = null
 
     @Column
-    var veterinarian_employee : String? = null
+    var veterinarianEmployee : String? = null
 }

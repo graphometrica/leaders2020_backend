@@ -8,7 +8,7 @@ import javax.persistence.Id
 class CareEmployeeEntity{
 
     @Id
-    var care_employee_id = UUID.randomUUID().toString()
+    var careEmployeeId = UUID.randomUUID().toString()
 
     @Column
     var name : String? = null

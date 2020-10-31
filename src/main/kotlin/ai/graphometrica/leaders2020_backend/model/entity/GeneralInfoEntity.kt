@@ -8,7 +8,7 @@ import javax.persistence.Id
 class GeneralInfoEntity{
 
     @Id
-    var general_info_id = UUID.randomUUID().toString()
+    var generalInfoId = UUID.randomUUID().toString()
     @Column
     var cardNumber : String? = null
     @Column

@@ -8,7 +8,7 @@ import javax.persistence.Id
 class CatchOrderEntity{
 
     @Id
-    var catch_order_id = UUID.randomUUID().toString()
+    var catchOrderId = UUID.randomUUID().toString()
 
     @Column
     var catchOrderActNumber : String? = null

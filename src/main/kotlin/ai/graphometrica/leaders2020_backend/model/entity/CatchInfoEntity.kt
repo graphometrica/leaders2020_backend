@@ -8,20 +8,20 @@ import javax.persistence.Id
 class CatchInfoEntity{
 
     @Id
-    var catch_info_id = UUID.randomUUID().toString()
+    var catchInfoId = UUID.randomUUID().toString()
 
     @Column
-    var act_number : String? = null
+    var actNumber : String? = null
 
     @Column
     var address : String? = null
 
     @Column
-    var catch_order : String? = null
+    var catchOrder : String? = null
 
     @Column
-    var administrative_district : String? = null
+    var administrativeDistrict : String? = null
 
     @Column
-    var general_info : String? = null
+    var generalInfo : String? = null
 }

@@ -8,7 +8,7 @@ import javax.persistence.Id
 class AdministrativeDistrictEntity{
 
     @Id
-    var administrative_district_id = UUID.randomUUID().toString()
+    var administrativeDistrictId = UUID.randomUUID().toString()
 
     @Column
     var name : String? = null

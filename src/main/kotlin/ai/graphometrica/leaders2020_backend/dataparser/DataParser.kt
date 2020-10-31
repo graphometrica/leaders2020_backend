@@ -8,7 +8,6 @@ import ai.graphometrica.leaders2020_backend.model.entity.CatchInfoEntity
 import ai.graphometrica.leaders2020_backend.model.entity.CatchOrderEntity
 import ai.graphometrica.leaders2020_backend.model.entity.CuratorEntity
 import ai.graphometrica.leaders2020_backend.model.entity.GeneralInfoEntity
-import ai.graphometrica.leaders2020_backend.model.entity.NewOwnerEntity
 import ai.graphometrica.leaders2020_backend.model.entity.ShelterEntity
 import ai.graphometrica.leaders2020_backend.model.entity.VeterinarianEmployeeEntity
 import ai.graphometrica.leaders2020_backend.repository.AdditionalInfoRepository
@@ -55,7 +54,6 @@ class DataParser(
     }
 
     @PostConstruct
-    @Transactional
     fun runParsing() {
         val sheet = getFirstSheet(getFile())
 
@@ -146,14 +144,14 @@ class DataParser(
             ShelterEntity().apply {
                 adress = row.getCell(41).toString()
                 serviceOrganization = row.getCell(42).toString()
-                boss_employee = try {
-                    bossEmployeeRepository.findByName(row.getCell(43).toString()).boss_employee_id
+                bossEmployee = try {
+                    bossEmployeeRepository.findByName(row.getCell(43).toString()).bossEmployeeId
                 } catch (e: Exception) {
                     null
                 }
 
-                care_employee = try {
-                    careEmployeeRepository.findByName(row.getCell(44).toString()).care_employee_id
+                careEmployee = try {
+                    careEmployeeRepository.findByName(row.getCell(44).toString()).careEmployeeId
                 } catch (e: Exception) {
                     null
                 }
@@ -182,13 +180,13 @@ class DataParser(
                 specialSigns = row.getCell(13).toString()
                 aviary = row.getCell(14).toString()
                 shelter = try {
-                    shelterRepository.findByAdress(row.getCell(41).toString()).shelter_id
+                    shelterRepository.findByAdress(row.getCell(41).toString()).shelterId
                 } catch (e: Exception) {
                     null
                 }
 
                 administrativeDistrict = try {
-                    administrativeDistrictRepository.findByName(row.getCell(21).toString()).administrative_district_id
+                    administrativeDistrictRepository.findByName(row.getCell(21).toString()).administrativeDistrictId
                 } catch (e: Exception) {
                     null
                 }
@@ -212,13 +210,13 @@ class DataParser(
                 }
                 isSocialized = yesNoToBooleanConverter(row.getCell(18).toString())
 
-                veterinarian_employee = try {
-                    veterinarianEmployeeRepository.findByName(row.getCell(18).toString()).veterinarian_employee_id
+                veterinarianEmployee = try {
+                    veterinarianEmployeeRepository.findByName(row.getCell(18).toString()).veterinarianEmployeeId
                 } catch (e: Exception) {
                     null
                 }
-                general_info = try {
-                    generalInfoRepository.findByCardNumber(row.getCell(1).toString()).general_info_id
+                generalInfo = try {
+                    generalInfoRepository.findByCardNumber(row.getCell(1).toString()).generalInfoId
                 } catch (e: Exception) {
                     null
                 }
@@ -231,23 +229,23 @@ class DataParser(
     fun parseCatchInfo(sheet: XSSFSheet) {
         val catchInfo = sheet.map { row ->
             CatchInfoEntity().apply {
-                act_number = row.getCell(22).toString()
+                actNumber = row.getCell(22).toString()
                 address = row.getCell(23).toString()
 
-                catch_order = try {
-                    catchOrderRepository.findByCatchOrderActNumber(row.getCell(19).toString()).catch_order_id
+                catchOrder = try {
+                    catchOrderRepository.findByCatchOrderActNumber(row.getCell(19).toString()).catchOrderId
                 } catch (e: Exception) {
                     null
                 }
 
-                administrative_district = try {
-                    administrativeDistrictRepository.findByName(row.getCell(21).toString()).administrative_district_id
+                administrativeDistrict = try {
+                    administrativeDistrictRepository.findByName(row.getCell(21).toString()).administrativeDistrictId
                 } catch (e: Exception) {
                     null
                 }
 
-                general_info = try {
-                    generalInfoRepository.findByCardNumber(row.getCell(1).toString()).general_info_id
+                generalInfo = try {
+                    generalInfoRepository.findByCardNumber(row.getCell(1).toString()).generalInfoId
                 } catch (e: Exception) {
                     null
                 }

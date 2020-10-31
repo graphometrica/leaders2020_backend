@@ -8,7 +8,7 @@ import javax.persistence.Id
 class CuratorEntity{
 
     @Id
-    var curator_id = UUID.randomUUID().toString()
+    var curatorId = UUID.randomUUID().toString()
 
     @Column
     var name : String? = null

@@ -9,7 +9,7 @@ spring:
       leakDetectionThreshold: 6000
     initialization-mode: always
   jpa:
-    show-sql: true
+    show-sql: false
 server:
   port: 8095
 

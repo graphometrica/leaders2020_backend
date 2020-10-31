@@ -8,7 +8,7 @@ import javax.persistence.Id
 class NewOwnerEntity{
 
     @Id
-    var new_owner_id = UUID.randomUUID().toString()
+    var newOwnerId = UUID.randomUUID().toString()
 
     @Column
     var type : String? = null
@@ -23,6 +23,6 @@ class NewOwnerEntity{
     var curator : String? = null
 
     @Column
-    var general_info : String? = null
+    var generalInfo : String? = null
 
 }

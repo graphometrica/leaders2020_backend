@@ -8,7 +8,7 @@ import javax.persistence.Id
 class ShelterEntity{
 
     @Id
-    var shelter_id = UUID.randomUUID().toString()
+    var shelterId = UUID.randomUUID().toString()
 
     @Column
     var adress : String? = null
@@ -17,8 +17,8 @@ class ShelterEntity{
     var serviceOrganization : String? = null
 
     @Column
-    var boss_employee : String? = null
+    var bossEmployee : String? = null
 
     @Column
-    var care_employee : String? = null
+    var careEmployee : String? = null
 }
