@@ -173,20 +173,20 @@
             <column name="wool_type_id" type="text"/>
             <column name="ear_type_id" type="text"/>
             <column name="tail_type_id" type="text"/>
-            <column name="size" type="double"/>
+            <column name="size" type="text"/>
             <column name="special_signs" type="text"/>
             <column name="aviary" type="text"/>
             <column name="identification_mark" type="text"/>
             <column name="care_employee_id" type="text"/>
             <column name="is_sterilized" type="boolean"/>
-            <column name="sterilization_date" type="text"/>
+            <column name="sterilization_date" type="date"/>
             <column name="sterilization_comment" type="text"/>
             <column name="veterinarian_employee_id" type="text"/>
             <column name="is_socialized" type="boolean"/>
             <column name="catch_act_number" type="text"/>
             <column name="catch_act_date" type="text"/>
             <column name="catch_order_number" type="text"/>
-            <column name="catch_order_date" type="text"/>
+            <column name="catch_order_date" type="date"/>
             <column name="catch_address_value" type="text"/>
             <column name="catch_address_latitude" type="text"/>
             <column name="catch_address_longitude" type="text"/>
@@ -222,6 +222,7 @@
             <column name="date" type="date"/>
             <column name="medication_name" type="text"/>
             <column name="serial_number" type="text"/>
+            <column name="dose" type="double"/>
         </createTable>
 
         <createTable tableName="vaccination">
@@ -259,11 +260,11 @@
             </column>
 
             <column name="movement_type" type="text"/>
-            <column name="animal_id" type="date"/>
+            <column name="animal_id" type="text"/>
             <column name="admission_date" type="text"/>
             <column name="admission_act_number" type="text"/>
             <column name="shelter_exit_date" type="text"/>
-            <column name="shelter_exit_act_number" type="date"/>
+            <column name="shelter_exit_act_number" type="text"/>
             <column name="shelter_exit_reason_id" type="text"/>
             <column name="death_reason_id" type="text"/>
             <column name="euthanasia_type_id" type="text"/>

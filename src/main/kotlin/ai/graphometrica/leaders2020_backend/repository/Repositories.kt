@@ -34,8 +34,8 @@ interface EuthanasiaTypesRepository : CrudRepository<EuthanasiaTypesEntity, Stri
 interface GenderTypeRepository : CrudRepository<GenderTypeEntity, String> { fun getByName(name : String) : GenderTypeEntity }
 interface HealthCheckRepository : CrudRepository<HealthCheckEntity, String> {}
 interface OperatingOrganizationRepository : CrudRepository<OperatingOrganizationEntity, String> { fun getByName(name : String) : OperatingOrganizationEntity }
-interface ShelterERepository : CrudRepository<ShelterEntity, String> {}
-interface ShelterExitRepository : CrudRepository<ShelterExitReasonEntity, String> {}
+interface ShelterERepository : CrudRepository<ShelterEntity, String> {fun getByAddress(address: String) : ShelterEntity}
+interface ShelterExitRepository : CrudRepository<ShelterExitReasonEntity, String> { fun getByName(name : String) : ShelterExitReasonEntity }
 interface TailTypeRepository : CrudRepository<TailTypeEntity, String> { fun getByName(name : String) : TailTypeEntity }
 interface VaccinationERepository : CrudRepository<VaccinationEntity, String> {}
 interface WoolTypeRepository : CrudRepository<WoolTypeEntity, String> { fun getByName(name : String) : WoolTypeEntity }

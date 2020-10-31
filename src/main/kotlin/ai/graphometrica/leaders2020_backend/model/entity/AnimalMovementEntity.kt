@@ -11,6 +11,9 @@ class AnimalMovementEntity {
     var id = UUID.randomUUID().toString()
 
     @Column
+    var animalId : String? = null
+
+    @Column
     var movementType : String? = null
 
     @Column

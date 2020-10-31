@@ -56,7 +56,7 @@ class AnimalEntity {
     var tailTypeId: String? = null
 
     @Column
-    var size: Double? = null
+    var size: String? = null
 
     @Column
     var specialSigns: String? = null
@@ -74,7 +74,7 @@ class AnimalEntity {
     var isSterilized: Boolean? = null
 
     @Column
-    var sterilizationDate: String? = null
+    var sterilizationDate: Date? = null
 
     @Column
     var sterilizationComment: String? = null
@@ -95,7 +95,7 @@ class AnimalEntity {
     var catchOrderNumber: String? = null
 
     @Column
-    var catchOrderDate: String? = null
+    var catchOrderDate: Date? = null
 
     @Column
     var catchAddressValue: String? = null
