@@ -10,6 +10,6 @@
         <tagDatabase tag="init"/>
     </changeSet>
 
-    <include file="init_1.xml" relativeToChangelogFile="true"/>
+    <include file="init_tables.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>
