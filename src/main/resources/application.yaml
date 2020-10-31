@@ -10,6 +10,9 @@ spring:
     initialization-mode: always
   jpa:
     show-sql: false
+  data:
+    rest:
+      base-path: /api/v1
 server:
   port: 8095
 
