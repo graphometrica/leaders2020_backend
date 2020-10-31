@@ -1,3 +1,6 @@
+application:
+  run-parsing: ${RUNPARSING:false}
+
 spring:
   liquibase:
     change-log: classpath:db/liquibase_main.xml

@@ -35,6 +35,7 @@ import ai.graphometrica.leaders2020_backend.repository.WoolTypeRepository
 import org.apache.poi.ss.usermodel.Row
 import org.apache.poi.xssf.usermodel.XSSFSheet
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Service
 import java.io.File
 import java.io.FileInputStream
@@ -69,21 +70,26 @@ class DataParser(
         return File("src/main/resources/dataset.xlsx")
     }
 
+    @Value("\${application.run-parsing}")
+    private var runParsing : Boolean = false
+
     @PostConstruct
     fun runParsing() {
-        val sheet = getFirstSheet(getFile())
-        parseDistricts(sheet)
-        parseAnimalType(sheet)
-        parseGenderType(sheet)
-        parseBreedsType(sheet)
-        parseColorType(sheet)
-        parseWoolType(sheet)
-        parseEarType(sheet)
-        parseTailType(sheet)
-        parseShelterExitReason(sheet)
-        parseShelter(sheet)
-        parseOperationOrganisation(sheet)
-        parseAnimals(sheet)
+        if (runParsing) {
+            val sheet = getFirstSheet(getFile())
+            parseDistricts(sheet)
+            parseAnimalType(sheet)
+            parseGenderType(sheet)
+            parseBreedsType(sheet)
+            parseColorType(sheet)
+            parseWoolType(sheet)
+            parseEarType(sheet)
+            parseTailType(sheet)
+            parseShelterExitReason(sheet)
+            parseShelter(sheet)
+            parseOperationOrganisation(sheet)
+            parseAnimals(sheet)
+        }
 
     }
 
