@@ -1,14 +1,14 @@
 package ai.graphometrica.leaders2020_backend.model.entity
+
 import java.util.*
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.Id
 
-@Entity(name = "care_employee")
-class CareEmployeeEntity{
-
+@Entity(name = "ear_type")
+class EarTypeEntity {
     @Id
-    var careEmployeeId = UUID.randomUUID().toString()
+    var id = UUID.randomUUID().toString()
 
     @Column
     var name : String? = null

@@ -1,1 +1,1 @@
-CREATE SCHEMA IF NOT EXISTS animal_schema;
+CREATE SCHEMA IF NOT EXISTS animal_schema_new;

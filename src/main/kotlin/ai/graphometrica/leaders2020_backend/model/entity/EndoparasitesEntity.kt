@@ -5,26 +5,26 @@ import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.Id
 
-@Entity(name = "shelter")
-class ShelterEntity {
+@Entity(name = "endoparasites")
+class EndoparasitesEntity {
     @Id
     var id = UUID.randomUUID().toString()
 
     @Column
-    var name : String? = null
+    var animalId : String? = null
 
     @Column
-    var address : String? = null
+    var position : String? = null
 
     @Column
-    var phone : String? = null
+    var date : Date? = null
 
     @Column
-    var operatingOrganizationId : String? = null
+    var medicationName : String? = null
 
     @Column
-    var districtId : String? = null
+    var serialNumber : String? = null
 
     @Column
-    var bossEmployeeId : String? = null
+    var dose : Double? = null
 }

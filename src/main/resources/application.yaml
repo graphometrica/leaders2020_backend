@@ -1,7 +1,7 @@
 spring:
   liquibase:
     change-log: classpath:db/liquibase_main.xml
-    default-schema: ${SPRING_LIQUIBASE_DEFAULT_SCHEMA:animal_schema}
+    default-schema: ${SPRING_LIQUIBASE_DEFAULT_SCHEMA:animal_schema_new}
     enabled: true
   datasource:
     driver-class-name: org.postgresql.Driver
@@ -22,12 +22,12 @@ spring:
   datasource:
     username: ${SPRING_DATASOURCE_USERNAME:graph_user}
     password: ${SPRING_DATASOURCE_PASSWORD:graph}
-    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/graphdb?currentSchema=animal_schema}
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/graphdb?currentSchema=animal_schema_new}
 ---
 spring:
   profiles: dev
   datasource:
     username: ${SPRING_DATASOURCE_USERNAME:graph}
     password: ${SPRING_DATASOURCE_PASSWORD:graph}
-    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://23.251.145.120:5432/animal?currentSchema=animal_schema}
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://23.251.145.120:5432/animal?currentSchema=animal_schema_new}
 ---

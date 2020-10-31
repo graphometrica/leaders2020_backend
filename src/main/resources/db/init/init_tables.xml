@@ -8,314 +8,301 @@
 
 
     <changeSet id="init_tables" author="pinigins">
-        <createTable tableName="boss_employee">
-            <column name="boss_employee_id" type="varchar(64)">
-                <constraints
-                        primaryKey="true"
-                        primaryKeyName="boss_employee_id_pk"/>
-            </column>
-
-            <column name="name" type="text"/>
-        </createTable>
-
-        <createTable tableName="care_employee">
-            <column name="care_employee_id" type="varchar(64)">
-                <constraints
-                        primaryKey="true"
-                        primaryKeyName="care_employee_id_pk"/>
-            </column>
-
-            <column name="name" type="text"/>
-        </createTable>
-
-        <createTable tableName="veterinarian_employee">
-            <column name="veterinarian_employee_id" type="varchar(64)">
-                <constraints
-                        primaryKey="true"
-                        primaryKeyName="veterinarian_employee_id_pk"/>
-            </column>
-
-            <column name="name" type="text"/>
-        </createTable>
-
-        <createTable tableName="curator">
-            <column name="curator_id" type="varchar(64)">
-                <constraints
-                        primaryKey="true"
-                        primaryKeyName="curator_id_pk"/>
-            </column>
-
-            <column name="name" type="text"/>
-        </createTable>
-
-        <createTable tableName="catch_order">
-            <column name="catch_order_id" type="varchar(64)">
-                <constraints
-                        primaryKey="true"
-                        primaryKeyName="catch_order_id_pk"/>
-            </column>
-
-            <column name="catch_order_act_number" type="text"/>
-            <column name="catch_order_act_date" type="date"/>
-        </createTable>
-
-        <createTable tableName="administrative_district">
-            <column name="administrative_district_id" type="varchar(64)">
-                <constraints
-                        primaryKey="true"
-                        primaryKeyName="administrative_district_id_pk"/>
-            </column>
-
-            <column name="name" type="text"/>
-        </createTable>
-
         <createTable tableName="shelter">
-            <column name="shelter_id" type="varchar(64)">
+            <column name="id" type="varchar(64)">
                 <constraints
                         primaryKey="true"
                         primaryKeyName="shelter_id_pk"/>
             </column>
 
-            <column name="adress" type="text"/>
-            <column name="service_organization" type="text"/>
-
-            <column name="boss_employee" type="varchar(64)">
-                <constraints
-                        foreignKeyName="shelter_boss_employee_id_fk"
-                        referencedTableName="boss_employee"
-                        referencedColumnNames="boss_employee_id"
-                />
-            </column>
-
-            <column name="care_employee" type="varchar(64)">
-                <constraints
-                        foreignKeyName="shelter_care_employee_id_fk"
-                        referencedTableName="care_employee"
-                        referencedColumnNames="care_employee_id"
-                />
-            </column>
+            <column name="name" type="text"/>
+            <column name="address" type="text"/>
+            <column name="phone" type="text"/>
+            <column name="operating_organization_id" type="text"/>
+            <column name="district_id" type="text"/>
+            <column name="boss_employee_id" type="text"/>
         </createTable>
 
-        <createTable tableName="general_info">
-            <column name="general_info_id" type="varchar(64)">
+        <createTable tableName="operating_organization">
+            <column name="id" type="varchar(64)">
                 <constraints
                         primaryKey="true"
-                        primaryKeyName="general_info_id_pk"/>
+                        primaryKeyName="operating_organization_id_pk"/>
             </column>
 
+            <column name="name" type="text"/>
+            <column name="address" type="text"/>
+            <column name="phone" type="text"/>
+            <column name="boss_employee_id" type="text"/>
+            <column name="district_id" type="text"/>
+        </createTable>
+
+        <createTable tableName="animal_type">
+            <column name="id" type="varchar(64)">
+                <constraints
+                        primaryKey="true"
+                        primaryKeyName="animal_type_id_pk"/>
+            </column>
+
+            <column name="name" type="text"/>
+        </createTable>
+
+        <createTable tableName="gender_type">
+            <column name="id" type="varchar(64)">
+                <constraints
+                        primaryKey="true"
+                        primaryKeyName="genders_id_pk"/>
+            </column>
+
+            <column name="name" type="text"/>
+        </createTable>
+
+        <createTable tableName="breed_type">
+            <column name="id" type="varchar(64)">
+                <constraints
+                        primaryKey="true"
+                        primaryKeyName="breed_type_id_pk"/>
+            </column>
+
+            <column name="name" type="text"/>
+        </createTable>
+
+        <createTable tableName="color_type">
+            <column name="id" type="varchar(64)">
+                <constraints
+                        primaryKey="true"
+                        primaryKeyName="color_type_id_pk"/>
+            </column>
+
+            <column name="name" type="text"/>
+        </createTable>
+
+        <createTable tableName="wool_type">
+            <column name="id" type="varchar(64)">
+                <constraints
+                        primaryKey="true"
+                        primaryKeyName="wool_type_id_pk"/>
+            </column>
+
+            <column name="name" type="text"/>
+        </createTable>
+
+        <createTable tableName="ear_type">
+            <column name="id" type="varchar(64)">
+                <constraints
+                        primaryKey="true"
+                        primaryKeyName="ear_type_id_pk"/>
+            </column>
+
+            <column name="name" type="text"/>
+        </createTable>
+
+        <createTable tableName="tail_type">
+            <column name="id" type="varchar(64)">
+                <constraints
+                        primaryKey="true"
+                        primaryKeyName="tail_type_id_pk"/>
+            </column>
+
+            <column name="name" type="text"/>
+        </createTable>
+
+        <createTable tableName="death_reasons">
+            <column name="id" type="varchar(64)">
+                <constraints
+                        primaryKey="true"
+                        primaryKeyName="death_reasons_id_pk"/>
+            </column>
+
+            <column name="name" type="text"/>
+        </createTable>
+
+        <createTable tableName="shelter_exit_reasons">
+            <column name="id" type="varchar(64)">
+                <constraints
+                        primaryKey="true"
+                        primaryKeyName="shelter_exit_reasons_id_pk"/>
+            </column>
+
+            <column name="name" type="text"/>
+        </createTable>
+
+        <createTable tableName="euthanasia_types">
+            <column name="id" type="varchar(64)">
+                <constraints
+                        primaryKey="true"
+                        primaryKeyName="euthanasia_types_id_pk"/>
+            </column>
+
+            <column name="name" type="text"/>
+        </createTable>
+
+        <createTable tableName="employee">
+            <column name="id" type="varchar(64)">
+                <constraints
+                        primaryKey="true"
+                        primaryKeyName="employees_id_pk"/>
+            </column>
+
+            <column name="name" type="text"/>
+            <column name="position_name" type="text"/>
+            <column name="shelter_id" type="text"/>
+            <column name="district_id" type="text"/>
+            <column name="operating_organization_id" type="text"/>
+        </createTable>
+
+        <createTable tableName="animal">
+            <column name="id" type="varchar(64)">
+                <constraints
+                        primaryKey="true"
+                        primaryKeyName="animal_id_pk"/>
+            </column>
+
+            <column name="picture_id" type="int"/>
             <column name="card_number" type="text"/>
-            <column name="type" type="text"/>
+            <column name="animal_type_id" type="text"/>
+            <column name="district_id" type="text"/>
+            <column name="operating_organization_id" type="text"/>
+            <column name="shelter_id" type="text"/>
             <column name="year" type="text"/>
             <column name="weight" type="text"/>
             <column name="nickname" type="text"/>
-            <column name="gender" type="text"/>
-            <column name="breed" type="text"/>
-            <column name="color" type="text"/>
-            <column name="wool" type="text"/>
-            <column name="ears" type="text"/>
-            <column name="tail" type="text"/>
-            <column name="size" type="text"/>
+            <column name="gender_id" type="text"/>
+            <column name="breed_id" type="text"/>
+            <column name="color_id" type="text"/>
+            <column name="wool_type_id" type="text"/>
+            <column name="ear_type_id" type="text"/>
+            <column name="tail_type_id" type="text"/>
+            <column name="size" type="double"/>
             <column name="special_signs" type="text"/>
             <column name="aviary" type="text"/>
-
-            <column name="shelter" type="varchar(64)">
-                <constraints
-                        foreignKeyName="general_info_shelter_id_fk"
-                        referencedTableName="shelter"
-                        referencedColumnNames="shelter_id"
-                />
-            </column>
-
-            <column name="administrative_district" type="varchar(64)">
-                <constraints
-                        foreignKeyName="general_info_administrative_district_id_fk"
-                        referencedTableName="administrative_district"
-                        referencedColumnNames="administrative_district_id"
-                />
-            </column>
-
-        </createTable>
-
-        <createTable tableName="additional_info">
-            <column name="additional_info_id" type="varchar(64)">
-                <constraints
-                        primaryKey="true"
-                        primaryKeyName="additional_info_id_pk"/>
-            </column>
-
             <column name="identification_mark" type="text"/>
-            <column name="sterilization_date" type="date"/>
-            <column name="sterilization_comment" type="text"/>
+            <column name="care_employee_id" type="text"/>
             <column name="is_sterilized" type="boolean"/>
+            <column name="sterilization_date" type="text"/>
+            <column name="sterilization_comment" type="text"/>
+            <column name="veterinarian_employee_id" type="text"/>
             <column name="is_socialized" type="boolean"/>
-
-            <column name="veterinarian_employee" type="varchar(64)">
-                <constraints
-                        foreignKeyName="additional_info_veterinarian_employee_id_fk"
-                        referencedTableName="veterinarian_employee"
-                        referencedColumnNames="veterinarian_employee_id"
-                />
-            </column>
-
-            <column name="general_info" type="varchar(64)">
-                <constraints
-                        foreignKeyName="additional_info_general_info_id_fk"
-                        referencedTableName="general_info"
-                        referencedColumnNames="general_info_id"
-                />
-            </column>
-
+            <column name="catch_act_number" type="text"/>
+            <column name="catch_act_date" type="text"/>
+            <column name="catch_order_number" type="text"/>
+            <column name="catch_order_date" type="text"/>
+            <column name="catch_address_value" type="text"/>
+            <column name="catch_address_latitude" type="text"/>
+            <column name="catch_address_longitude" type="text"/>
+            <column name="catch_video" type="text"/>
+            <column name="address_value" type="text"/>
+            <column name="address_fias" type="text"/>
+            <column name="address_latitude" type="text"/>
+            <column name="address_longitude" type="text"/>
+            <column name="new_owner_type" type="text"/>
+            <column name="new_owner_pe_name" type="text"/>
+            <column name="new_owner_pe_pass_number" type="text"/>
+            <column name="new_owner_pe_pass_serial" type="text"/>
+            <column name="new_owner_pe_pass_issued_by" type="text"/>
+            <column name="new_owner_pe_pass_issue_date" type="text"/>
+            <column name="new_owner_pe_registration_address" type="text"/>
+            <column name="new_owner_contact" type="text"/>
+            <column name="new_owner_le_name" type="text"/>
+            <column name="new_owner_le_phone" type="text"/>
+            <column name="new_owner_le_address" type="text"/>
+            <column name="new_owner_guardians" type="text"/>
+            <column name="animal_movement_id" type="text"/>
         </createTable>
 
-        <createTable tableName="catch_info">
-            <column name="catch_info_id" type="varchar(64)">
+        <createTable tableName="endoparasites">
+            <column name="id" type="varchar(64)">
                 <constraints
                         primaryKey="true"
-                        primaryKeyName="catch_info_id_pk"/>
+                        primaryKeyName="endoparasites_id_pk"/>
             </column>
 
-            <column name="act_number" type="text"/>
-            <column name="address" type="text"/>
-
-            <column name="catch_order" type="varchar(64)">
-                <constraints
-                        foreignKeyName="catch_info_catch_order_id_fk"
-                        referencedTableName="catch_order"
-                        referencedColumnNames="catch_order_id"
-                />
-            </column>
-
-            <column name="administrative_district" type="varchar(64)">
-                <constraints
-                        foreignKeyName="catch_info_administrative_district_id_fk"
-                        referencedTableName="administrative_district"
-                        referencedColumnNames="administrative_district_id"
-                />
-            </column>
-
-            <column name="general_info" type="varchar(64)">
-                <constraints
-                        foreignKeyName="catch_info_general_info_id_fk"
-                        referencedTableName="general_info"
-                        referencedColumnNames="general_info_id"
-                />
-            </column>
-
-        </createTable>
-
-
-        <createTable tableName="new_owner">
-            <column name="new_owner_id" type="varchar(64)">
-                <constraints
-                        primaryKey="true"
-                        primaryKeyName="new_owner_id_pk"/>
-            </column>
-
-            <column name="type" type="text"/>
-            <column name="name" type="text"/>
-            <column name="document_number" type="text"/>
-
-            <column name="curator" type="varchar(64)">
-                <constraints
-                        foreignKeyName="new_owner_curator_id_fk"
-                        referencedTableName="curator"
-                        referencedColumnNames="curator_id"
-                />
-            </column>
-
-            <column name="general_info" type="varchar(64)">
-                <constraints
-                        foreignKeyName="new_owner_info_general_info_id_fk"
-                        referencedTableName="general_info"
-                        referencedColumnNames="general_info_id"
-                />
-            </column>
-        </createTable>
-
-
-        <createTable tableName="animal_movement">
-            <column name="animal_movement_id" type="varchar(64)">
-                <constraints
-                        primaryKey="true"
-                        primaryKeyName="animal_movement_id_pk"/>
-            </column>
-
-            <column name="date" type="date"/>
-            <column name="type" type="text"/>
-            <column name="document_number" type="text"/>
-            <column name="additional" type="text"/>
-
-            <column name="general_info" type="varchar(64)">
-                <constraints
-                        foreignKeyName="animal_movement_info_general_info_id_fk"
-                        referencedTableName="general_info"
-                        referencedColumnNames="general_info_id"
-                />
-            </column>
-        </createTable>
-
-        <createTable tableName="endoparasite">
-            <column name="endoparasite_id" type="varchar(64)">
-                <constraints
-                        primaryKey="true"
-                        primaryKeyName="endoparasite_id_pk"/>
-            </column>
-
-            <column name="date" type="date"/>
+            <column name="animal_id" type="text"/>
             <column name="position" type="text"/>
+            <column name="date" type="date"/>
             <column name="medication_name" type="text"/>
-            <column name="dose" type="text"/>
-
-            <column name="general_info" type="varchar(64)">
-                <constraints
-                        foreignKeyName="endoparasite_info_general_info_id_fk"
-                        referencedTableName="general_info"
-                        referencedColumnNames="general_info_id"
-                />
-            </column>
+            <column name="serial_number" type="text"/>
         </createTable>
-
 
         <createTable tableName="vaccination">
-            <column name="vaccination_id" type="varchar(64)">
+            <column name="id" type="varchar(64)">
                 <constraints
                         primaryKey="true"
                         primaryKeyName="vaccination_id_pk"/>
             </column>
 
-            <column name="date" type="date"/>
+            <column name="animal_id" type="text"/>
             <column name="position" type="text"/>
+            <column name="date" type="date"/>
             <column name="medication_name" type="text"/>
             <column name="serial_number" type="text"/>
-
-            <column name="general_info" type="varchar(64)">
-                <constraints
-                        foreignKeyName="vaccination_info_general_info_id_fk"
-                        referencedTableName="general_info"
-                        referencedColumnNames="general_info_id"
-                />
-            </column>
         </createTable>
 
-
-        <createTable tableName="health_info">
-            <column name="health_info_id" type="varchar(64)">
+        <createTable tableName="health_check">
+            <column name="id" type="varchar(64)">
                 <constraints
                         primaryKey="true"
-                        primaryKeyName="health_info_id_pk"/>
+                        primaryKeyName="health_check_id_pk"/>
             </column>
 
+            <column name="animal_id" type="text"/>
             <column name="date" type="date"/>
+            <column name="weight" type="text"/>
             <column name="anamnesis" type="text"/>
+        </createTable>
 
-            <column name="general_info" type="varchar(64)">
+        <createTable tableName="animal_movement">
+            <column name="id" type="varchar(64)">
                 <constraints
-                        foreignKeyName="health_info_info_general_info_id_fk"
-                        referencedTableName="general_info"
-                        referencedColumnNames="general_info_id"
-                />
+                        primaryKey="true"
+                        primaryKeyName="animal_movement_id_pk"/>
+            </column>
+
+            <column name="movement_type" type="text"/>
+            <column name="animal_id" type="date"/>
+            <column name="admission_date" type="text"/>
+            <column name="admission_act_number" type="text"/>
+            <column name="shelter_exit_date" type="text"/>
+            <column name="shelter_exit_act_number" type="date"/>
+            <column name="shelter_exit_reason_id" type="text"/>
+            <column name="death_reason_id" type="text"/>
+            <column name="euthanasia_type_id" type="text"/>
+        </createTable>
+
+        <createTable tableName="users">
+            <column name="id" type="varchar">
+                <constraints primaryKey="true" primaryKeyName="users_id_pk"/>
+            </column>
+            <column name="login" type="varchar">
+                <constraints nullable="false" />
+            </column>
+            <column name="full_name" type="varchar">
+                <constraints nullable="false" />
+            </column>
+            <column name="secret" type="varchar">
+                <constraints nullable="false" />
+            </column>
+            <column name="level" type="varchar">
+                <constraints nullable="false" />
+            </column>
+            <column name="level_access" type="varchar">
+                <constraints nullable="false" />
+            </column>
+            <column name="enabled" type="boolean" defaultValue="true">
+                <constraints nullable="false" />
             </column>
         </createTable>
+
+        <createTable tableName="district">
+            <column name="id" type="varchar(64)">
+                <constraints
+                        primaryKey="true"
+                        primaryKeyName="district_id_pk"/>
+            </column>
+
+            <column name="name" type="text"/>
+        </createTable>
+
 
     </changeSet>
 

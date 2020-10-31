@@ -5,8 +5,8 @@ import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.Id
 
-@Entity(name = "shelter")
-class ShelterEntity {
+@Entity(name = "employee")
+class EmployeeEntity {
     @Id
     var id = UUID.randomUUID().toString()
 
@@ -14,17 +14,14 @@ class ShelterEntity {
     var name : String? = null
 
     @Column
-    var address : String? = null
+    var positionName : String? = null
 
     @Column
-    var phone : String? = null
-
-    @Column
-    var operatingOrganizationId : String? = null
+    var shelterId : String? = null
 
     @Column
     var districtId : String? = null
 
     @Column
-    var bossEmployeeId : String? = null
+    var operatingOrganizationId : String? = null
 }
