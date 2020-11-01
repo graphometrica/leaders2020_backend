@@ -23,7 +23,13 @@ import org.springframework.data.repository.CrudRepository
 import org.springframework.data.rest.core.annotation.RepositoryRestResource
 
 @RepositoryRestResource(collectionResourceRel = "animal", path = "animal")
-interface AnimalRepository : CrudRepository<AnimalEntity, String> {}
+interface AnimalRepository : CrudRepository<AnimalEntity, String> {
+
+    fun findAllByDistrictId(districtId: String): Iterable<AnimalEntity>
+    fun findAllByShelterId(shelterId: String): Iterable<AnimalEntity>
+    fun findAllByOperatingOrganizationId(operatingOrganizationId: String): Iterable<AnimalEntity>
+
+}
 @RepositoryRestResource(collectionResourceRel = "animalMovement", path = "animalMovement")
 interface AnimalMovementRepository : CrudRepository<AnimalMovementEntity, String> {}
 @RepositoryRestResource(collectionResourceRel = "animal-type", path = "animal-type")
