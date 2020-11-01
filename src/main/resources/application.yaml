@@ -18,10 +18,10 @@ spring:
       base-path: /api/v1
 server:
   port: 8095
-
-
-
-
+  servlet:
+    session:
+      cookie:
+        http-only: false
 ---
 spring:
   profiles: local
