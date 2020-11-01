@@ -1,0 +1,94 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+            http://www.liquibase.org/xml/ns/dbchangelog
+            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+        ">
+
+
+    <changeSet id="init_values" author="pinigins">
+        <insert schemaName="animal_schema_new" tableName="users">
+            <column name="id">6a9b8251-446c-4013-afdf-e099a636ceaf</column>
+            <column name="login">district1</column>
+            <column name="full_name">District User 1</column>
+            <column name="secret">{SHA-256}a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3</column>
+            <column name="level">DISTRICT</column>
+            <column name="level_access">e64ac734-e608-48a1-9230-3467bc3b013d</column>
+            <column name="enabled">true</column>
+        </insert>
+        <insert schemaName="animal_schema_new" tableName="users">
+            <column name="id">581fff53-8286-433e-9e35-9c3d38d8a678</column>
+            <column name="login">district2</column>
+            <column name="full_name">District User 2</column>
+            <column name="secret">{SHA-256}a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3</column>
+            <column name="level">DISTRICT</column>
+            <column name="level_access">8a3fe902-415c-4245-bb84-dd429bc41c99</column>
+            <column name="enabled">true</column>
+        </insert>
+        <insert schemaName="animal_schema_new" tableName="users">
+            <column name="id">7bcb908f-176e-44fa-a35a-81409a03c2d9</column>
+            <column name="login">dep1</column>
+            <column name="full_name">Department user 1</column>
+            <column name="secret">{SHA-256}a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3</column>
+            <column name="level">DEPARTMENT</column>
+            <column name="level_access">dummy</column>
+            <column name="enabled">true</column>
+        </insert>
+        <insert schemaName="animal_schema_new" tableName="users">
+            <column name="id">dffada95-1c17-4c4c-a530-3770cc1c73d4</column>
+            <column name="login">org2</column>
+            <column name="full_name">Organization User 2</column>
+            <column name="secret">{SHA-256}a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3</column>
+            <column name="level">ORGANIZATION</column>
+            <column name="level_access">7d1f16b2-6597-46be-936e-d6781d3b29d1</column>
+            <column name="enabled">true</column>
+        </insert>
+        <insert schemaName="animal_schema_new" tableName="users">
+            <column name="id">3ad28a78-e74e-4c3e-8615-156f9549fe30</column>
+            <column name="login">district3</column>
+            <column name="full_name">District User 3</column>
+            <column name="secret">{SHA-256}a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3</column>
+            <column name="level">DISTRICT</column>
+            <column name="level_access">a2e5b68d-491e-49b3-9bb3-da1146b01ce3</column>
+            <column name="enabled">true</column>
+        </insert>
+        <insert schemaName="animal_schema_new" tableName="users">
+            <column name="id">122ae079-ae58-446c-b9c0-89fdec84b6e7</column>
+            <column name="login">org1</column>
+            <column name="full_name">Organization User 1</column>
+            <column name="secret">{SHA-256}a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3</column>
+            <column name="level">ORGANIZATION</column>
+            <column name="level_access">6e7b9b30-7cb1-4ed4-b6b4-2a7cd3aa66ba</column>
+            <column name="enabled">true</column>
+        </insert>
+        <insert schemaName="animal_schema_new" tableName="users">
+            <column name="id">b23e8068-dcda-446a-9f92-851ad7e5cd2f</column>
+            <column name="login">shelter1</column>
+            <column name="full_name">Shelter User 1</column>
+            <column name="secret">{SHA-256}a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3</column>
+            <column name="level">SHELTER</column>
+            <column name="level_access">dd72e34e-8abb-435b-b5e3-12da5cb11711</column>
+            <column name="enabled">true</column>
+        </insert>
+        <insert schemaName="animal_schema_new" tableName="users">
+            <column name="id">99b92675-b0b2-4bd4-98f6-e3a438674918</column>
+            <column name="login">shelter3</column>
+            <column name="full_name">Shelter User 3</column>
+            <column name="secret">{SHA-256}a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3</column>
+            <column name="level">SHELTER</column>
+            <column name="level_access">0e218769-16aa-4414-afb8-06a68fd2ca6f</column>
+            <column name="enabled">true</column>
+        </insert>
+        <insert schemaName="animal_schema_new" tableName="users">
+            <column name="id">0ad42cf0-f696-4f37-b586-d5de67898a3d</column>
+            <column name="login">shelter2</column>
+            <column name="full_name">Shelter User 2</column>
+            <column name="secret">{SHA-256}a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3</column>
+            <column name="level">SHELTER</column>
+            <column name="level_access">b9430a33-c4e3-4368-8d0f-a2b497033e45</column>
+            <column name="enabled">true</column>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

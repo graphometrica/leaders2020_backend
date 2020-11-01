@@ -11,5 +11,6 @@
     </changeSet>
 
     <include file="init_tables.xml" relativeToChangelogFile="true"/>
+    <include file="init_users.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>

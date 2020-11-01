@@ -5,10 +5,12 @@ import ai.graphometrica.leaders2020_backend.UserLevel
 import ai.graphometrica.leaders2020_backend.model.entity.AnimalEntity
 import ai.graphometrica.leaders2020_backend.repository.AnimalRepository
 import org.springframework.security.core.context.SecurityContextHolder
+import org.springframework.web.bind.annotation.CrossOrigin
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
+@CrossOrigin
 @RestController
 @RequestMapping("/api/v1")
 class AnimalController(val animalRepository: AnimalRepository) {
